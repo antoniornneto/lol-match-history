@@ -24,7 +24,7 @@ export default async function RankStats({ id }: { id: string }) {
           <div key={rank.leagueId}>
             <div className="flex flex-col items-center">
               <Image
-                src={`/Ranked Emblems Latest/Rank=${rank.tier}.png`}
+                src={`/ranked-emblems/Rank=${rank.tier}.png`}
                 alt={rank.tier}
                 width={200}
                 height={200}
