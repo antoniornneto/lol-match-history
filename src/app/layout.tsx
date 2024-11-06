@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "sonner";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const beauforForLOL = localFont({
+  src: "./fonts/BeaufortforLOL-Regular.ttf",
 });
 
 export const metadata: Metadata = {
@@ -25,10 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${beauforForLOL.className} antialiased`}>
+        <main>{children}</main>
+        <Toaster position="bottom-right" closeButton richColors />
       </body>
     </html>
   );
