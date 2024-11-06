@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import runes from "../../../runes.json";
 import { gameVersion } from "@/lib/utils";
@@ -5,15 +6,13 @@ import { gameVersion } from "@/lib/utils";
 export default function Perks({
   primary,
   secondary,
-  stats,
 }: {
   primary: any;
   secondary: any;
-  stats: any;
 }) {
   const perk1 = primary[0].selections[0].perk;
 
-  function findIconById(data, targetId) {
+  function findIconById(data: any, targetId: any) {
     for (const item of data) {
       for (const slot of item.slots) {
         for (const rune of slot.runes) {

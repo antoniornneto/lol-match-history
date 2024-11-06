@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import SummonerSpells from "./summonerSpells";
 import { gameVersion } from "@/lib/utils";
@@ -19,8 +20,8 @@ export default async function Match({
   const matchData = resGetMatch.info.participants;
   const typeMatch = resGetMatch.info.queueId;
 
-  let dataPlayer = [];
-  matchData.forEach((data) => {
+  let dataPlayer: any = [];
+  matchData.forEach((data: any) => {
     if (data) {
       dataPlayer = [
         ...dataPlayer,
@@ -61,7 +62,7 @@ export default async function Match({
   });
   return (
     <div>
-      {dataPlayer.map((player) => (
+      {dataPlayer.map((player: any) => (
         <div key={player.puuid} className="flex justify-center">
           {puuid === player.puuid ? (
             <div className="py-4">
@@ -101,7 +102,7 @@ export default async function Match({
                 {/* Build */}
                 <div className="flex flex-col justify-around">
                   <div className="flex">
-                    {player.build.map((item) =>
+                    {player.build.map((item: any) =>
                       item ? (
                         <Image
                           key={""}
@@ -136,7 +137,6 @@ export default async function Match({
                   <Perks
                     primary={player.perks.primary}
                     secondary={player.perks.secondary}
-                    stats={player.perks.stats}
                   />
                 </div>
               </div>

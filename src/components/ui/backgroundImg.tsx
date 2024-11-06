@@ -21,7 +21,8 @@ export default async function BGImage({
   );
   const championsListRES = await championsListREQ.json();
   let championMatch: string = "";
-  Object.values(championsListRES.data).forEach((champion) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Object.values(championsListRES.data).forEach((champion: any) => {
     if (champion.key === `${highChampionMastery}`) {
       championMatch = `${champion.name}`;
     }

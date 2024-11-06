@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 
 export default async function SummonerSpells({
@@ -17,7 +18,7 @@ export default async function SummonerSpells({
     <div className="flex">
       {/* SS D */}
       <div>
-        {data.map((summonerspell) => (
+        {data.map((summonerspell: any) => (
           <div key={summonerspell.key}>
             {summonerspell.key == ss1 ? (
               <Image
@@ -33,7 +34,7 @@ export default async function SummonerSpells({
       </div>
       {/* SS F */}
       <div>
-        {data.map((summonerspell) => (
+        {data.map((summonerspell: any) => (
           <div key={summonerspell.key}>
             {summonerspell.key == ss2 ? (
               <Image
