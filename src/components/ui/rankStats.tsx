@@ -27,7 +27,7 @@ export default async function RankStats({ id }: { id: string }) {
                 src={`/Ranked Emblems Latest/Rank=${rank.tier}.png`}
                 alt={rank.tier}
                 width={200}
-                height={0}
+                height={200}
               />
               <div className="text-xl text-center font-semibold">
                 <p>
